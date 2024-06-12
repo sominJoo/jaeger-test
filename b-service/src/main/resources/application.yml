@@ -20,10 +20,3 @@ server:
     whitelabel:
       enabled: false
     path: /error
-
-#opentracing:
-#  jaeger:
-#    service-name: b-service-svc # jaeger service name
-#    udp-sender:
-#      host: localhost # jaeger server ip
-#      port: 6831           # jaeger udp port

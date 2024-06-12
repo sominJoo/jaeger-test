@@ -27,9 +27,9 @@ spring:
                 baseMessage: Spring Cloud Gateway B-ServiceFilter
                 preLogger: true
                 postLogger: true
-#opentracing:
-#  jaeger:
-#    service-name: gateway-svc # jaeger service name
-#    udp-sender:
-#      host: localhost # jaeger server ip
-#      port: 6831           # jaeger udp port
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+tracing:
+  url: http://localhost:4317
