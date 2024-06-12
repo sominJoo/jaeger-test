@@ -1,0 +1,35 @@
+server:
+  port: 8000
+---
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: a-service-svc
+          uri: http://localhost:8001/
+          predicates:
+            - Path=/a-service/**
+          filters:
+            - name: AServiceFilter
+              args:
+                baseMessage: Spring Cloud Gateway A-ServiceFilter
+                preLogger: true
+                postLogger: true
+        - id: b-service-svc
+          uri: http://localhost:8002/
+          predicates:
+            - Path=/b-service/**
+          filters:
+            - name: BServiceFilter
+              args:
+                baseMessage: Spring Cloud Gateway B-ServiceFilter
+                preLogger: true
+                postLogger: true
+#opentracing:
+#  jaeger:
+#    service-name: gateway-svc # jaeger service name
+#    udp-sender:
+#      host: localhost # jaeger server ip
+#      port: 6831           # jaeger udp port
