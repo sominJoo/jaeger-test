@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: b-service
+
+server:
+  port: 8002
+  servlet:
+    session:
+      timeout: 7200
+      cookie:
+        name: msf-session-id
+    encoding:
+      charset: UTF-8
+    context-path: /b-service
+  compression:
+    enabled: true
+  tomcat:
+    uri-encoding: UTF-8
+  error:
+    whitelabel:
+      enabled: false
+    path: /error
+
+#opentracing:
+#  jaeger:
+#    service-name: b-service-svc # jaeger service name
+#    udp-sender:
+#      host: localhost # jaeger server ip
+#      port: 6831           # jaeger udp port
