@@ -27,9 +27,16 @@ spring:
                 baseMessage: Spring Cloud Gateway B-ServiceFilter
                 preLogger: true
                 postLogger: true
-management:
-  tracing:
-    sampling:
-      probability: 1.0
-tracing:
-  url: http://localhost:4317
+
+
+# application.yml
+otel:
+  service:
+    name: gateway-service
+  traces:
+    exporter: jaeger
+    jaeger:
+      endpoint: http://localhost:14250
+  resource:
+    attributes:
+      service.name: gateway-service

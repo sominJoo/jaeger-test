@@ -20,3 +20,10 @@ server:
     whitelabel:
       enabled: false
     path: /error
+
+# application.yml
+otel:
+  propagators: jaeger
+  exporter:
+    otlp:
+      endpoint: http://192.168.105.26:4317
