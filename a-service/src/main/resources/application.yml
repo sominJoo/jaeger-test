@@ -21,9 +21,6 @@ server:
       enabled: false
     path: /error
 
-# application.yml
-otel:
-  propagators: jaeger
-  exporter:
-    otlp:
-      endpoint: http://192.168.105.26:4317
+jaeger:
+  endpoint: http://192.168.105.26:14250
+  timeout: 30

@@ -1,0 +1,326 @@
+{
+  "data": [
+    {
+      "traceID": "5ccd9a56b530837d1d06b98963d13ee6",
+      "spans": [
+        {
+          "traceID": "5ccd9a56b530837d1d06b98963d13ee6",
+          "spanID": "58bb9e4d9bece5f5",
+          "operationName": "spanPhase_1",
+          "references": [],
+          "startTime": 1718614193222367,
+          "duration": 29691,
+          "tags": [
+            {
+              "key": "internal.span.format",
+              "type": "string",
+              "value": "proto"
+            },
+            {
+              "key": "otel.scope.name",
+              "type": "string",
+              "value": "opentracing-shim"
+            },
+            {
+              "key": "otel.scope.version",
+              "type": "string",
+              "value": "1.39.0"
+            }
+          ],
+          "logs": [
+            {
+              "timestamp": 1718614193222375,
+              "fields": [
+                {
+                  "key": "event",
+                  "type": "string",
+                  "value": "API Gateway 서비스"
+                }
+              ]
+            },
+            {
+              "timestamp": 1718614193252055,
+              "fields": [
+                {
+                  "key": "event",
+                  "type": "string",
+                  "value": "API Gateway 서비스 END"
+                }
+              ]
+            }
+          ],
+          "processID": "p1",
+          "warnings": [],
+          "process": {
+            "serviceName": "gateway-service",
+            "tags": [
+              {
+                "key": "hostname",
+                "type": "string",
+                "value": "jusomin-ui-MacBookAir.local"
+              },
+              {
+                "key": "ip",
+                "type": "string",
+                "value": "172.16.0.97"
+              },
+              {
+                "key": "jaeger.version",
+                "type": "string",
+                "value": "opentelemetry-java"
+              },
+              {
+                "key": "otel.library.name",
+                "type": "string",
+                "value": "opentracing-shim"
+              },
+              {
+                "key": "otel.library.version",
+                "type": "string",
+                "value": "1.39.0"
+              },
+              {
+                "key": "service.name",
+                "type": "string",
+                "value": "gateway-service"
+              },
+              {
+                "key": "telemetry.sdk.language",
+                "type": "string",
+                "value": "java"
+              },
+              {
+                "key": "telemetry.sdk.name",
+                "type": "string",
+                "value": "opentelemetry"
+              },
+              {
+                "key": "telemetry.sdk.version",
+                "type": "string",
+                "value": "1.39.0"
+              }
+            ]
+          },
+          "relativeStartTime": 0,
+          "depth": 0,
+          "hasChildren": false,
+          "childSpanIds": []
+        }
+      ],
+      "processes": {
+        "p1": {
+          "serviceName": "gateway-service",
+          "tags": [
+            {
+              "key": "hostname",
+              "type": "string",
+              "value": "jusomin-ui-MacBookAir.local"
+            },
+            {
+              "key": "ip",
+              "type": "string",
+              "value": "172.16.0.97"
+            },
+            {
+              "key": "jaeger.version",
+              "type": "string",
+              "value": "opentelemetry-java"
+            },
+            {
+              "key": "otel.library.name",
+              "type": "string",
+              "value": "opentracing-shim"
+            },
+            {
+              "key": "otel.library.version",
+              "type": "string",
+              "value": "1.39.0"
+            },
+            {
+              "key": "service.name",
+              "type": "string",
+              "value": "gateway-service"
+            },
+            {
+              "key": "telemetry.sdk.language",
+              "type": "string",
+              "value": "java"
+            },
+            {
+              "key": "telemetry.sdk.name",
+              "type": "string",
+              "value": "opentelemetry"
+            },
+            {
+              "key": "telemetry.sdk.version",
+              "type": "string",
+              "value": "1.39.0"
+            }
+          ]
+        }
+      },
+      "warnings": null
+    },
+    {
+      "traceID": "379684169cf08209188531604d5e873f",
+      "spans": [
+        {
+          "traceID": "379684169cf08209188531604d5e873f",
+          "spanID": "a727ace34285ff58",
+          "operationName": "spanPhase_1",
+          "references": [],
+          "startTime": 1718614238717400,
+          "duration": 6710,
+          "tags": [
+            {
+              "key": "internal.span.format",
+              "type": "string",
+              "value": "proto"
+            },
+            {
+              "key": "otel.scope.name",
+              "type": "string",
+              "value": "opentracing-shim"
+            },
+            {
+              "key": "otel.scope.version",
+              "type": "string",
+              "value": "1.39.0"
+            }
+          ],
+          "logs": [
+            {
+              "timestamp": 1718614238717408,
+              "fields": [
+                {
+                  "key": "event",
+                  "type": "string",
+                  "value": "API Gateway 서비스"
+                }
+              ]
+            },
+            {
+              "timestamp": 1718614238724107,
+              "fields": [
+                {
+                  "key": "event",
+                  "type": "string",
+                  "value": "API Gateway 서비스 END"
+                }
+              ]
+            }
+          ],
+          "processID": "p1",
+          "warnings": [],
+          "process": {
+            "serviceName": "gateway-service",
+            "tags": [
+              {
+                "key": "hostname",
+                "type": "string",
+                "value": "jusomin-ui-MacBookAir.local"
+              },
+              {
+                "key": "ip",
+                "type": "string",
+                "value": "172.16.0.97"
+              },
+              {
+                "key": "jaeger.version",
+                "type": "string",
+                "value": "opentelemetry-java"
+              },
+              {
+                "key": "otel.library.name",
+                "type": "string",
+                "value": "opentracing-shim"
+              },
+              {
+                "key": "otel.library.version",
+                "type": "string",
+                "value": "1.39.0"
+              },
+              {
+                "key": "service.name",
+                "type": "string",
+                "value": "gateway-service"
+              },
+              {
+                "key": "telemetry.sdk.language",
+                "type": "string",
+                "value": "java"
+              },
+              {
+                "key": "telemetry.sdk.name",
+                "type": "string",
+                "value": "opentelemetry"
+              },
+              {
+                "key": "telemetry.sdk.version",
+                "type": "string",
+                "value": "1.39.0"
+              }
+            ]
+          },
+          "relativeStartTime": 0,
+          "depth": 0,
+          "hasChildren": false,
+          "childSpanIds": []
+        }
+      ],
+      "processes": {
+        "p1": {
+          "serviceName": "gateway-service",
+          "tags": [
+            {
+              "key": "hostname",
+              "type": "string",
+              "value": "jusomin-ui-MacBookAir.local"
+            },
+            {
+              "key": "ip",
+              "type": "string",
+              "value": "172.16.0.97"
+            },
+            {
+              "key": "jaeger.version",
+              "type": "string",
+              "value": "opentelemetry-java"
+            },
+            {
+              "key": "otel.library.name",
+              "type": "string",
+              "value": "opentracing-shim"
+            },
+            {
+              "key": "otel.library.version",
+              "type": "string",
+              "value": "1.39.0"
+            },
+            {
+              "key": "service.name",
+              "type": "string",
+              "value": "gateway-service"
+            },
+            {
+              "key": "telemetry.sdk.language",
+              "type": "string",
+              "value": "java"
+            },
+            {
+              "key": "telemetry.sdk.name",
+              "type": "string",
+              "value": "opentelemetry"
+            },
+            {
+              "key": "telemetry.sdk.version",
+              "type": "string",
+              "value": "1.39.0"
+            }
+          ]
+        }
+      },
+      "warnings": null
+    }
+  ]
+}

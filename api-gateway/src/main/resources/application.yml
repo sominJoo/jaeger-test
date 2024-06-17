@@ -29,14 +29,6 @@ spring:
                 postLogger: true
 
 
-# application.yml
-otel:
-  service:
-    name: gateway-service
-  traces:
-    exporter: jaeger
-    jaeger:
-      endpoint: http://localhost:14250
-  resource:
-    attributes:
-      service.name: gateway-service
+jaeger:
+  endpoint: http://192.168.105.26:14250
+  timeout: 30

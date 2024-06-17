@@ -20,8 +20,6 @@ public class AService {
 	private Tracer tracer;
 	public Object getTest() {
 		logger.info("Incoming request at {} for request /path1 ", applicationName);
-		
-		
 		logger.info("A service getTest 동작");
 		
 		return "A Service 안녕";
