@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: a-service
+
+server:
+  port: 8001
+  servlet:
+    session:
+      timeout: 7200
+      cookie:
+        name: msf-session-id
+    encoding:
+      charset: UTF-8
+    context-path: /a-service
+  compression:
+    enabled: true
+  tomcat:
+    uri-encoding: UTF-8
+  error:
+    whitelabel:
+      enabled: false
+    path: /error
+
+jaeger:
+  endpoint: http://192.168.105.26:14250
+  timeout: 30
