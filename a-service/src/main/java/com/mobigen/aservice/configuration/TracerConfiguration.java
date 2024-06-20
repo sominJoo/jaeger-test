@@ -48,11 +48,10 @@ public class TracerConfiguration {
 						W3CTraceContextPropagator.getInstance(),
 						JaegerPropagator.getInstance()
 		);
-		OpenTelemetrySdk openTelemetry = OpenTelemetrySdk.builder()
+		
+		return OpenTelemetrySdk.builder()
 				.setPropagators(ContextPropagators.create(textMapPropagator))
 				.setTracerProvider(tracerProvider)
 				.build();
-
-		return openTelemetry;
 	}
 }

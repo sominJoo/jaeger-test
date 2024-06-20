@@ -50,10 +50,9 @@ public class TracerConfiguration {
 				JaegerPropagator.getInstance()
 		);
 		
-		OpenTelemetrySdk openTelemetry = OpenTelemetrySdk.builder()
+		return OpenTelemetrySdk.builder()
 				.setPropagators(ContextPropagators.create(textMapPropagator))
 				.setTracerProvider(tracerProvider)
 				.build();
-		return openTelemetry;
 	}
 }
