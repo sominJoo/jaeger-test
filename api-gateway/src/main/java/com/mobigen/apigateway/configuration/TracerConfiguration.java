@@ -6,13 +6,11 @@ import io.opentelemetry.context.propagation.ContextPropagators;
 import io.opentelemetry.context.propagation.TextMapPropagator;
 import io.opentelemetry.exporter.jaeger.JaegerGrpcSpanExporter;
 import io.opentelemetry.extension.trace.propagation.JaegerPropagator;
-import io.opentelemetry.opentracingshim.OpenTracingShim;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import io.opentelemetry.semconv.ResourceAttributes;
-import io.opentracing.Tracer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,7 +29,7 @@ public class TracerConfiguration {
 	private String serviceName;
 	
 	@Bean
-	public Tracer tracer() {
+	public OpenTelemetrySdk tracer() {
 		Resource serviceNameResource =
 				Resource.create(Attributes.of(ResourceAttributes.SERVICE_NAME, serviceName));
 
@@ -45,17 +43,17 @@ public class TracerConfiguration {
 				.setResource(Resource.getDefault().merge(serviceNameResource))
 				.build();
 		
+		
+		// Tracer를 parent에서 가져오기 위한 설정
+		TextMapPropagator textMapPropagator = TextMapPropagator.composite(
+				W3CTraceContextPropagator.getInstance(),
+				JaegerPropagator.getInstance()
+		);
+		
 		OpenTelemetrySdk openTelemetry = OpenTelemetrySdk.builder()
-				.setPropagators(ContextPropagators.create(
-						TextMapPropagator.composite(
-								W3CTraceContextPropagator.getInstance(),
-								JaegerPropagator.getInstance()
-						)
-				))
+				.setPropagators(ContextPropagators.create(textMapPropagator))
 				.setTracerProvider(tracerProvider)
 				.build();
-
-		Runtime.getRuntime().addShutdownHook(new Thread(tracerProvider::close));
-		return OpenTracingShim.createTracerShim(openTelemetry);
+		return openTelemetry;
 	}
 }
